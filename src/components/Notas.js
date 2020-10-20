@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 export default class Notas extends Component {
-  handleInputChange = (event, index) => {
+  handleInputChange = (event) => {
     const { id } = this.props.currentGrades;
     const grade = event.target.value;
     this.props.onGradeChange(grade, id);

@@ -23,7 +23,7 @@ export default class Calculos extends Component {
         )}
         <br />
         <label className={css.resultLabel}>
-          Aprovação pelo percentual total (70%)?{" "}
+          Aprovação pelo percentual total (70%)?
         </label>
         {averageGrades(totalGrades, modules.length) >= 70 ? (
           <span className={css.approved}>Sim</span>
