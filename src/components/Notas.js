@@ -3,7 +3,13 @@ import React, { Component } from "react";
 export default class Notas extends Component {
   handleInputChange = (event) => {
     const { id } = this.props.currentGrades;
-    const grade = event.target.value;
+    const grade =
+      Number.parseInt(
+        event.target.value,
+        10
+      ) /* prevent NaN - Received NaN for the `defaultValue` attribute. 
+            If this is expected, cast the value to a string */ ||
+      0;
     this.props.onGradeChange(grade, id);
   };
 
@@ -14,7 +20,8 @@ export default class Notas extends Component {
       <div className="row">
         <div className="col s10">
           <label>{labelName}</label>
-          <input style={grades >= 60 ? styles.toColorGreen : styles.toColorRed}
+          <input
+            style={grades >= 60 ? styles.toColorGreen : styles.toColorRed}
             defaultValue={grades}
             type="number"
             onInput={this.handleInputChange}

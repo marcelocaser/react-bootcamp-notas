@@ -54,7 +54,7 @@ export default class App extends Component {
      e em seguida faz o cálculo de acordo com a nota informada! */
     modules.map((item) => {
       if (item.id === index) {
-        item.grades = Number.parseInt(grade, 10);
+        item.grades = grade;
       }
       return item;
     });
