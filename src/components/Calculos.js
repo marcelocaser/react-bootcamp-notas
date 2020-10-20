@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { averageGrades } from "../helpers/calculeteGrades";
 import css from "./calculos.module.css";
+import { formatPercent } from "../helpers/formatHelpers";
 
 export default class Calculos extends Component {
   render() {
@@ -12,7 +13,7 @@ export default class Calculos extends Component {
         <br />
         <label className={css.resultLabel}>Percentual total: </label>
         <span className={css.valueLabel}>
-          {averageGrades(totalGrades, modules.length)}
+          {formatPercent(averageGrades(totalGrades, modules.length) / 100)}
         </span>
         <br />
         <label className={css.resultLabel}>Aprovação pela média (60%)? </label>
