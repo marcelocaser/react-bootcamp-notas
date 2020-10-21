@@ -12,31 +12,26 @@ export default class App extends Component {
           id: 1,
           description: "Módulo 01 - Fundamentos (0 - 100)",
           grades: 100,
-          onGradeChange: this.handleChangeGrade,
         },
         {
           id: 2,
           description: "Módulo 02 - Angular (0 - 100)",
           grades: 100,
-          onGradeChange: this.handleChangeGrade,
         },
         {
           id: 3,
           description: "Módulo 03 - React (0 - 100)",
           grades: 100,
-          onGradeChange: this.handleChangeGrade,
         },
         {
           id: 4,
           description: "Módulo 04 - Vue (0 - 100)",
           grades: 100,
-          onGradeChange: this.handleChangeGrade,
         },
         {
           id: 5,
           description: "Módulo 05 - Desafio Final (0 - 100)",
           grades: 100,
-          onGradeChange: this.handleChangeGrade,
         },
       ],
       totalGrades: 0,
@@ -84,13 +79,13 @@ export default class App extends Component {
             <h4 style={styles.centeredTitle}>Notas atuais</h4>
             <div className="border">
               {modules.map((currentGrades) => {
-                const { id, description, onGradeChange } = currentGrades;
+                const { id, description } = currentGrades;
                 return (
                   <div key={id}>
                     <Notas
                       labelName={description}
                       currentGrades={currentGrades}
-                      onGradeChange={onGradeChange}
+                      onGradeChange={this.handleChangeGrade}
                     />
                   </div>
                 );
